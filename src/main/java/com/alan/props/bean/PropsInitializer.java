@@ -8,6 +8,7 @@ import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.Environment;
 import org.springframework.core.env.MapPropertySource;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.lang.NonNull;
 
 import java.util.HashMap;
 import java.util.List;
@@ -42,7 +43,7 @@ public class PropsInitializer implements BeanPostProcessor, InitializingBean, En
   }
 
   @Override
-  public void setEnvironment(Environment environment) {
+  public void setEnvironment(@NonNull Environment environment) {
     if(environment instanceof ConfigurableEnvironment) {
       this.environment = (ConfigurableEnvironment) environment;
     }
